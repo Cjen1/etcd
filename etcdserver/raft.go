@@ -499,7 +499,7 @@ func startNode(cfg ServerConfig, cl *membership.RaftCluster, ids []types.ID) (id
 		Storage:         s,
 		MaxSizePerMsg:   maxSizePerMsg,
 		MaxInflightMsgs: maxInflightMsgs,
-		CheckQuorum:     true,
+		CheckQuorum:     false,
 		PreVote:         cfg.PreVote,
 	}
 	if cfg.Logger != nil {
@@ -557,7 +557,7 @@ func restartNode(cfg ServerConfig, snapshot *raftpb.Snapshot) (types.ID, *member
 		Storage:         s,
 		MaxSizePerMsg:   maxSizePerMsg,
 		MaxInflightMsgs: maxInflightMsgs,
-		CheckQuorum:     true,
+		CheckQuorum:     false,
 		PreVote:         cfg.PreVote,
 	}
 	if cfg.Logger != nil {
@@ -654,7 +654,7 @@ func restartAsStandaloneNode(cfg ServerConfig, snapshot *raftpb.Snapshot) (types
 		Storage:         s,
 		MaxSizePerMsg:   maxSizePerMsg,
 		MaxInflightMsgs: maxInflightMsgs,
-		CheckQuorum:     true,
+		CheckQuorum:     false,
 		PreVote:         cfg.PreVote,
 	}
 	if cfg.Logger != nil {
